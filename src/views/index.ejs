@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <% if (message != '') { %>
+  <section class="message message-<%= type %>">
+    <p><%= message %></p>
+    <span id="close-message"><i class="bi bi-x-square"></i></span>
+  </section>
+  <% } %>
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -47,9 +54,11 @@
       <ul>
         <% tasksLists.forEach((task) => { %>
 
-        <li>
+        <li class="check-<%= task.check %>">
           <div>
-            <a href="/"><%= task.task %> </a>
+            <a href="/check/<%= task._id %>" class="check-<%= task.check %>"
+              ><%= task.task %>
+            </a>
             <span> Criado em <%= task.date.toLocaleDateString('pt-BR') %></span>
           </div>
           <div>
