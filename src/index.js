@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
 const routes = require("./routes/routes");
 const connectToDb = require("./database/db");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 connectToDb();
 app.use(express.urlencoded());
