@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <% if (message != '') { %>
-    <%- include ('./components/message', {
-      typeMessage: type, 
-      pMessage: message
-    }) %>
-  
-  
-    
-  <% } %>
+  <% if (message != '') { %> <%- include ('./components/message', { typeMessage:
+  type, pMessage: message }) %> <% } %>
 
   <head>
     <meta charset="UTF-8" />
@@ -23,16 +16,11 @@
   </head>
   <body>
     <header>
-      <% if (task == null) { %> 
-        <%- include('./components/form',{ title: "TO DO LIST",
-         action: "create", value: "", 
-         idBtn: "addButton", 
-         nameBtn:"Adicionar"})%> 
-      <% } else { %>
-        <%- include('./components/form',
-        { title: "EDITAR TAREFA", action: `updateOne/${task._id}`, value: task.task, 
-        idBtn: "updateButton", nameBtn:"Atualizar"}) %>     
-      <% } %>
+      <% if (task == null) { %> <%- include('./components/form',{ title:
+      "WHATSAPP 2", action: "create", value: "", idBtn: "addButton",
+      nameBtn:"Adicionar"})%> <% } else { %> <%- include('./components/form', {
+      title: "EDITAR TAREFA", action: `updateOne/${task._id}`, value: task.task,
+      idBtn: "updateButton", nameBtn:"Atualizar"}) %> <% } %>
     </header>
 
     <section class="sectionTasks" id="tasks">
