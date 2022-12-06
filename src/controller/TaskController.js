@@ -32,7 +32,7 @@ const createTask = async (req, res) => {
 
   try {
     await Task.create(task);
-    message = "Tarefa criado com sucesso";
+    message = "Tarefa criada com sucesso";
     type = "success";
     return res.redirect("/");
   } catch (err) {
@@ -82,7 +82,7 @@ const updateOneTask = async (req, res) => {
 const deleteOneTask = async (req, res) => {
   try {
     await Task.deleteOne({ _id: req.params.id });
-    message = "Tarefa deleta com sucesso";
+    message = "Tarefa deletada com sucesso";
     type = "success";
     return res.redirect("/");
   } catch (err) {
